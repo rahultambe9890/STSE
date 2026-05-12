@@ -28,16 +28,14 @@ body {
 /* HALL TICKET */
 #hallTicket {
 
-    width: 100%;
-    max-width: 794px;
-
-    min-height: 1123px;
+    width: 210mm;
+    min-height: 297mm;
 
     background: white;
 
     margin: auto;
 
-    padding: 50px;
+    padding: 15mm;
 
     box-sizing: border-box;
 
