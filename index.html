@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shree Samarth Talent Search Exam</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- html2pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <!-- FORM SECTION -->
+    <div class="container bg-white p-4 shadow rounded form-container" id="formContainer">
+
+        <div class="text-center mb-4">
+            <img src="logo.png" class="logo mb-2" alt="Logo">
+            <h2 class="fw-bold text-primary">
+                SHREE SAMARTH TALENT SEARCH EXAM
+            </h2>
+            <p class="text-muted mb-0">
+                Hall Ticket Generator 2026-27
+            </p>
+        </div>
+
+        <form id="regForm">
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="fw-bold">
+                        Seat Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="seatNoInput"
+                        class="form-control"
+                        placeholder="Enter Seat Number"
+                        required
+                    />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="fw-bold">
+                        Student Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        placeholder="Enter Full Name"
+                        required
+                    />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="fw-bold">
+                        Date of Birth
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dob"
+                        class="form-control"
+                        required
+                    />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="fw-bold">
+                        Standard
+                    </label>
+
+                    <input
+                        type="text"
+                        id="standard"
+                        class="form-control"
+                        placeholder="Example: 5th"
+                        required
+                    />
+                </div>
+
+                <div class="col-md-12">
+                    <label class="fw-bold">
+                        School Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="school"
+                        class="form-control"
+                        placeholder="Enter School Name"
+                        required
+                    />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="fw-bold">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        maxlength="10"
+                        class="form-control"
+                        placeholder="Enter Mobile Number"
+                        required
+                    />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="fw-bold">
+                        Exam Center
+                    </label>
+
+                    <select
+                        id="center"
+                        class="form-select"
+                        required
+                    >
+                        <option value="">
+                            -- Select Center --
+                        </option>
+
+                        <option value="Center 1: Shree Samarth Campus">
+                            Center 1: Shree Samarth Campus
+                        </option>
+
+                        <option value="Center 2: Z.P. School Main">
+                            Center 2: Z.P. School Main
+                        </option>
+
+                        <option value="Center 3: Vidya Mandir">
+                            Center 3: Vidya Mandir
+                        </option>
+                    </select>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="fw-bold">
+                        Student Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        class="form-control"
+                        accept="image/*"
+                        required
+                    />
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary btn-lg w-100 mt-4"
+            >
+                Generate Hall Ticket
+            </button>
+
+        </form>
+    </div>
+
+    <!-- HALL TICKET -->
+    <div id="ticketWrapper">
+
+        <div id="hallTicket">
+
+            <!-- HEADER -->
+            <div class="header-section text-center">
+
+                <img src="logo.png" class="ticket-logo mb-2" alt="Logo">
+
+                <h1 class="fw-bold">
+                    SHREE SAMARTH TALENT SEARCH EXAM
+                </h1>
+
+                <p class="fw-bold">
+                    Official Hall Ticket (2026-27)
+                </p>
+
+            </div>
+
+            <!-- STUDENT INFO -->
+            <div class="row">
+
+                <div class="col-8">
+
+                    <div class="seat-no-display mb-3">
+                        SEAT NO :
+                        <span id="tSeat"></span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">
+                            Candidate Name:
+                        </span>
+
+                        <span id="tName"
+                            class="fw-bold text-uppercase">
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">
+                            Date of Birth:
+                        </span>
+
+                        <span id="tDob"></span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">
+                            Standard:
+                        </span>
+
+                        <span id="tStd"></span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">
+                            School Name:
+                        </span>
+
+                        <span id="tSchool"></span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">
+                            Exam Center:
+                        </span>
+
+                        <span id="tCenter"
+                            class="fw-bold">
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="col-4 text-center">
+
+                    <img
+                        id="tPhoto"
+                        class="photo-box"
+                        src=""
+                        alt="Student Photo"
+                    />
+
+                    <p class="small mt-2">
+                        Student Photo
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- TABLE -->
+            <table class="exam-table">
+
+                <thead>
+                    <tr>
+                        <th>Paper</th>
+                        <th>Subjects</th>
+                        <th>Timing</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="fw-bold">
+                            Paper I
+                        </td>
+
+                        <td>
+                            Marathi & Mathematics
+                        </td>
+
+                        <td>
+                            11:00 AM to 12:30 PM
+                        </td>
+
+                        <td>
+                            100
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fw-bold">
+                            Paper II
+                        </td>
+
+                        <td>
+                            English & MAT
+                        </td>
+
+                        <td>
+                            02:00 PM to 03:30 PM
+                        </td>
+
+                        <td>
+                            100
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <!-- INSTRUCTIONS -->
+            <div class="instruction-box">
+
+                <p class="fw-bold mb-2">
+                    INSTRUCTIONS / सूचना
+                </p>
+
+                <ul>
+
+                    <li>
+                        Bring this hall ticket to examination center.
+                    </li>
+
+                    <li>
+                        Reach center 30 minutes before exam.
+                    </li>
+
+                    <li>
+                        No electronic gadgets allowed.
+                    </li>
+
+                    <li>
+                        Use only blue or black ball pen.
+                    </li>
+
+                    <li>
+                        Keep this hall ticket safe until results.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- SIGNATURE -->
+            <div class="row sign-box text-center">
+
+                <div class="col-6">
+                    <p class="border-top pt-3 fw-bold">
+                        Student Signature
+                    </p>
+                </div>
+
+                <div class="col-6">
+                    <p class="border-top pt-3 fw-bold">
+                        Principal Signature & Stamp
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DOWNLOAD BUTTON -->
+        <div class="text-center mt-4 mb-5">
+
+            <button
+                id="dlBtn"
+                class="btn btn-success btn-lg shadow"
+                onclick="downloadPDF()"
+            >
+                Download PDF
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
