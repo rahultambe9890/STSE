@@ -100,7 +100,7 @@ function downloadPDF() {
 
     const opt = {
 
-        margin: 0,
+        margin: [0, 0, 0, 0],
 
         filename: fileName,
 
@@ -111,27 +111,26 @@ function downloadPDF() {
 
         html2canvas: {
 
-            scale: 3,
+            scale: 2,
 
             useCORS: true,
 
-            scrollY: 0
+            letterRendering: true
         },
 
         jsPDF: {
 
-            unit: "mm",
+            unit: "px",
 
-            format: "a4",
+            format: [794, 1123],
 
             orientation: "portrait"
         }
     };
 
     html2pdf()
-        .set(opt)
         .from(element)
+        .set(opt)
         .save();
 }
-
  
