@@ -15,7 +15,10 @@ body {
 .form-container {
     max-width: 700px;
 }
-
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 /* LOGO */
 .logo {
     width: 80px;
