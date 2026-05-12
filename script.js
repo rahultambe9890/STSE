@@ -104,39 +104,45 @@ function downloadPDF() {
         + seatNoForFile
         + ".pdf";
 
-    const opt = {
+    setTimeout(() => {
 
-        margin: [0, 0, 0, 0],
+        const opt = {
 
-        filename: fileName,
+            margin: 0,
 
-        image: {
-            type: "jpeg",
-            quality: 1
-        },
+            filename: fileName,
 
-        html2canvas: {
+            image: {
+                type: "jpeg",
+                quality: 1
+            },
 
-            scale: 2,
+            html2canvas: {
 
-            useCORS: true,
+                scale: 2,
 
-            letterRendering: true
-        },
+                useCORS: true,
 
-        jsPDF: {
+                scrollX: 0,
 
-            unit: "px",
+                scrollY: 0
+            },
 
-            format: [794, 1123],
+            jsPDF: {
 
-            orientation: "portrait"
-        }
-    };
+                unit: "px",
 
-    html2pdf()
-        .from(element)
-        .set(opt)
-        .save();
+                format: [794, 1123],
+
+                orientation: "portrait"
+            }
+        };
+
+        html2pdf()
+            .set(opt)
+            .from(element)
+            .save();
+
+    }, 500);
 }
  
