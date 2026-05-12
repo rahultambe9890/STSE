@@ -28,20 +28,23 @@ body {
 /* HALL TICKET */
 #hallTicket {
 
-    width: 210mm;
-    min-height: 297mm;
+    width: 794px;
+
+    min-height: 1123px;
 
     background: white;
 
     margin: auto;
 
-    padding: 15mm;
+    padding: 40px;
 
     box-sizing: border-box;
 
     display: none;
 
     color: black;
+
+    overflow: hidden;
 }
 
 /* HEADER */
