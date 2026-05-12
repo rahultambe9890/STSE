@@ -111,18 +111,18 @@ function downloadPDF() {
 
         html2canvas: {
 
-            scale: 2,
+            scale: 3,
 
-            width: 794,
+            useCORS: true,
 
-            useCORS: true
+            scrollY: 0
         },
 
         jsPDF: {
 
-            unit: "px",
+            unit: "mm",
 
-            format: [794, 1123],
+            format: "a4",
 
             orientation: "portrait"
         }
@@ -133,3 +133,5 @@ function downloadPDF() {
         .from(element)
         .save();
 }
+
+ 
