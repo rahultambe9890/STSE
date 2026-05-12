@@ -74,7 +74,13 @@ document
                 .style.display = "none";
 
             document.getElementById("hallTicket")
-                .style.display = "block";
+    .style.visibility = "visible";
+
+document.getElementById("hallTicket")
+    .style.position = "relative";
+
+document.getElementById("hallTicket")
+    .style.left = "0";
 
             document.getElementById("dlBtn")
                 .style.display = "inline-block";
