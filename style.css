@@ -43,7 +43,13 @@ body {
 
     box-sizing: border-box;
 
-    display: none;
+     visibility: hidden;
+
+    position: absolute;
+
+    left: -9999px;
+
+    top: 0;
 
     color: black;
 
