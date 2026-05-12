@@ -1,0 +1,170 @@
+body {
+    background: linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364
+    );
+
+    min-height: 100vh;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* FORM */
+.form-container {
+    max-width: 700px;
+}
+
+/* LOGO */
+.logo {
+    width: 80px;
+}
+
+.ticket-logo {
+    width: 90px;
+}
+
+/* HALL TICKET */
+#hallTicket {
+
+    width: 100%;
+    max-width: 794px;
+
+    min-height: 1123px;
+
+    background: white;
+
+    margin: auto;
+
+    padding: 50px;
+
+    box-sizing: border-box;
+
+    display: none;
+
+    color: black;
+}
+
+/* HEADER */
+.header-section {
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+/* SEAT NO */
+.seat-no-display {
+
+    border: 2px solid black;
+
+    display: inline-block;
+
+    padding: 10px 25px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    background: #f8f9fa;
+}
+
+/* INFO */
+.info-row {
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.info-label {
+    width: 160px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* PHOTO */
+.photo-box {
+
+    width: 140px;
+    height: 170px;
+
+    object-fit: cover;
+
+    border: 1px solid black;
+}
+
+/* TABLE */
+.exam-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 25px;
+}
+
+.exam-table th,
+.exam-table td {
+
+    border: 1px solid black;
+
+    padding: 12px;
+
+    text-align: center;
+}
+
+.exam-table th {
+    background: #f2f2f2;
+}
+
+/* INSTRUCTIONS */
+.instruction-box {
+
+    margin-top: 25px;
+
+    border-top: 1px solid #ccc;
+
+    padding-top: 15px;
+
+    font-size: 13px;
+}
+
+/* SIGN */
+.sign-box {
+    margin-top: 80px;
+}
+
+/* BUTTON */
+#dlBtn {
+    display: none;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* MOBILE */
+@media screen and (max-width: 800px) {
+
+    body {
+        padding: 10px;
+    }
+
+    #hallTicket {
+
+        padding: 20px;
+    }
+
+    .photo-box {
+
+        width: 100px;
+        height: 120px;
+    }
+
+    .info-label {
+
+        width: 120px;
+    }
+
+    .seat-no-display {
+
+        font-size: 18px;
+    }
+}
